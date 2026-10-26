@@ -1,0 +1,7 @@
+__pycache__/
+
+.idea/
+.venv/
+
+docs/
+chroma_db/

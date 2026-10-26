@@ -1,0 +1,251 @@
+[
+  {
+    "question": "如何启动 turtlesim 节点来验证 ROS 是否安装成功？",
+    "relevant_chunk_ids": [
+      "aa96fefe1e4231d36805",
+      "52b14ed893488dd8d646",
+      "1e34f9882943d72d4ffa",
+      "bb5f13a41902d8c479da"
+    ],
+    "relevant_snippets": [
+      "rosrun turtlesim turtlesim_node",
+      "roscore"
+    ],
+    "ground_truth": "先在一个终端运行 roscore 启动 ROS 主节点，再在另一个终端运行 rosrun turtlesim turtlesim_node，若出现小乌龟图形界面则说明安装成功。"
+  },
+  {
+    "question": "查看当前 ROS 发行版版本号的命令是什么？",
+    "relevant_chunk_ids": [
+      "35657242342b9d00dcdb",
+      "430974706c1b423678e1"
+    ],
+    "relevant_snippets": [
+      "echo $ROS_DISTRO"
+    ],
+    "ground_truth": "使用 echo $ROS_DISTRO 命令查看当前 ROS 发行版。"
+  },
+  {
+    "question": "package.xml 有哪些必填标签？",
+    "relevant_chunk_ids": [
+      "18bef368e441a1c4c42c"
+    ],
+    "relevant_snippets": [
+      "<name>",
+      "<version>",
+      "<description>",
+      "<maintainer>",
+      "<license>"
+    ],
+    "ground_truth": "必填标签包括 name、version、description、maintainer、license。"
+  },
+  {
+    "question": "CMakeLists.txt 中 catkin_package 的作用是什么？",
+    "relevant_chunk_ids": [
+      "8f039f16d20f09c279ac"
+    ],
+    "relevant_snippets": [
+      "catkin_package",
+      "声明当前包的元信息"
+    ],
+    "ground_truth": "catkin_package 是 ROS 特有的 CMake 指令，用于声明当前包的元信息（导出的头文件、库、依赖关系等），以便其他包通过 find_package 依赖当前包时能正确获取所需信息。"
+  },
+  {
+    "question": "turtlesim 中控制乌龟运动的话题名称和消息类型是什么？",
+    "relevant_chunk_ids": [
+      "6a116d6b494ed0a85314",
+      "aacb40875bc805a8dee5"
+    ],
+    "relevant_snippets": [
+      "turtleX/cmd_vel",
+      "geometry_msgs/Twist",
+      "控制乌龟角速度与线速度的输入指令"
+    ],
+    "ground_truth": "话题名为 turtleX/cmd_vel，消息类型为 geometry_msgs/Twist，用于控制乌龟的角速度与线速度。"
+  },
+  {
+    "question": "turtlesim 中发布乌龟姿态信息的话题是什么？包含哪些字段？",
+    "relevant_chunk_ids": [
+      "6a116d6b494ed0a85314"
+    ],
+    "relevant_snippets": [
+      "turtleX/pose",
+      "turtlesim/Pose",
+      "x与y的坐标位置、角度、线速度和角速度"
+    ],
+    "ground_truth": "话题为 turtleX/pose，类型为 turtlesim/Pose，包含 x 与 y 坐标、角度、线速度和角速度。"
+  },
+  {
+    "question": "运行发布者程序前没有启动 ROS 节点管理器会怎样？如何解决？",
+    "relevant_chunk_ids": [
+      "0d5d21a7c692ae0f28fc",
+      "c2e3f4de0cc184b6c7f0",
+      "fe85f6e15921d3b7b040"
+    ],
+    "relevant_snippets": [
+      "在运行发布者程序前没有启动ROS节点管理器",
+      "然后再启动发布者程序即可"
+    ],
+    "ground_truth": "需要先启动 ROS 节点管理器（roscore），然后再启动发布者程序。"
+  },
+  {
+    "question": "服务通信中客户端如何等待服务可用？",
+    "relevant_chunk_ids": [
+      "85ce213d4e913a68afde",
+      "656367f14a355d3a3383"
+    ],
+    "relevant_snippets": [
+      "client.wait_for_service()",
+      "wait_for_service(service, timeout=None)"
+    ],
+    "ground_truth": "调用 client.wait_for_service() 等待服务可用，可选传入超时时间。"
+  },
+  {
+    "question": "rosservice call 命令的用途是什么？",
+    "relevant_chunk_ids": [
+      "1f3a27591ce230db8034"
+    ],
+    "relevant_snippets": [
+      "rosservice call /service args：使⽤提供的参数调⽤服务"
+    ],
+    "ground_truth": "rosservice call /service args 使用提供的参数调用指定服务。"
+  },
+  {
+    "question": "rossrv show 命令的作用是什么？",
+    "relevant_chunk_ids": [
+      "be88af7502897e7a285c"
+    ],
+    "relevant_snippets": [
+      "rossrv show srv ：显⽰服务消息详情"
+    ],
+    "ground_truth": "rossrv show srv 用于显示服务消息详情。"
+  },
+  {
+    "question": "rosparam 有哪些常用子命令？",
+    "relevant_chunk_ids": [
+      "68f5116db442ac76b282"
+    ],
+    "relevant_snippets": [
+      "rosparam set paramter",
+      "rosparam get paramter",
+      "rosparam load file",
+      "rosparam dump file",
+      "rosparam delete paramter",
+      "rosparam list"
+    ],
+    "ground_truth": "常用子命令有 set（设置参数）、get（获取参数）、load（从文件加载）、dump（写出到文件）、delete（删除参数）、list（列出所有参数）。"
+  },
+  {
+    "question": "launch 文件相比手动启动节点有什么优势？",
+    "relevant_chunk_ids": [
+      "f8e097330c547c0584bf"
+    ],
+    "relevant_snippets": [
+      "同时启动多个节点",
+      "自动启动ROS Master",
+      "动态地配置启动节点的参数"
+    ],
+    "ground_truth": "launch 文件可以一次性启动多个节点、自动启动 ROS Master（无需每次 roscore）、动态配置节点参数，避免开多个终端。"
+  },
+  {
+    "question": "launch 文件中 <node> 标签的语法和常用属性有哪些？",
+    "relevant_chunk_ids": [
+      "ece114669414e881c7f5",
+      "4cc3781e311fdbdca4e0",
+      "75f33ead68a4d6dc94c6"
+    ],
+    "relevant_snippets": [
+      "<node name=\"node-name\" pkg=\"package\" type=\"excutable\" />",
+      "output",
+      "respawn",
+      "required",
+      "ns",
+      "args"
+    ],
+    "ground_truth": "语法为 <node name=... pkg=... type=... />；常用属性有 output=screen、respawn=true、required=true、ns、args。"
+  },
+  {
+    "question": "launch 文件中 param 和 arg 有什么区别？",
+    "relevant_chunk_ids": [
+      "58d5d8e9f9fa001af554",
+      "cad0fdb0a6c602c9aee1"
+    ],
+    "relevant_snippets": [
+      "<param>",
+      "加载到参数服务器",
+      "<arg>",
+      "launch⽂件内部的局部变量"
+    ],
+    "ground_truth": "param 把参数加载到参数服务器上（全局可见）；arg 类似 launch 文件内部的局部变量，仅在 launch 文件内使用。"
+  },
+  {
+    "question": "rviz 主界面包含哪几个部分？",
+    "relevant_chunk_ids": [
+      "8bbfcfe2c8bbb2eea944"
+    ],
+    "relevant_snippets": [
+      "工具栏",
+      "显示项列表",
+      "3D视图区",
+      "视角设置区",
+      "时间显示区"
+    ],
+    "ground_truth": "包含工具栏、显示项列表、3D 视图区、视角设置区、时间显示区五个部分。"
+  },
+  {
+    "question": "在 rviz 中查看里程计数据需要设置什么？订阅哪个话题？",
+    "relevant_chunk_ids": [
+      "a55e1fafdca1823643a3"
+    ],
+    "relevant_snippets": [
+      "Fixed Frame为odom",
+      "/odom话题"
+    ],
+    "ground_truth": "需要把 Global Options 的 Fixed Frame 设为 odom，并在 Odometry 组件的 topic 中选择 /odom 话题。"
+  },
+  {
+    "question": "URDF 中 joint 有哪些类型？",
+    "relevant_chunk_ids": [
+      "4356fe003b88ac7c1065"
+    ],
+    "relevant_snippets": [
+      "Continuous",
+      "Revolute",
+      "prismatic",
+      "planar",
+      "floating",
+      "fixed"
+    ],
+    "ground_truth": "joint 类型有 Continuous、Revolute、prismatic、planar、floating、fixed 六种。"
+  },
+  {
+    "question": "URDF 中 Geometry 的标签有哪些？分别如何设置参数？",
+    "relevant_chunk_ids": [
+      "40da7762c51618ec108c"
+    ],
+    "relevant_snippets": [
+      "Box",
+      "Cyclinder",
+      "Sphere",
+      "Mesh",
+      "size",
+      "radius",
+      "length",
+      "filename"
+    ],
+    "ground_truth": "Box 设 size=长宽高；Cylinder 设 radius 和 length；Sphere 设 radius；Mesh 设 filename 资源路径。"
+  },
+  {
+    "question": "xacro 中如何定义宏并调用？",
+    "relevant_chunk_ids": [
+      "a620dfca1991413cf4d4",
+      "89efbb41150aa0e86ca3",
+      "4e6c48b21b870a340047",
+      "2538816493a8afce6841"
+    ],
+    "relevant_snippets": [
+      "<xacro:macro name=\"add_wheel\" params=",
+      "<xacro:add_wheel name="
+    ],
+    "ground_truth": "用 <xacro:macro name=\"...\" params=\"...\"> 定义宏，用 <xacro:宏名 参数=... /> 调用，适合复用重复模块（如轮子）。"
+  }
+]
